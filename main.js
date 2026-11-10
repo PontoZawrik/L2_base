@@ -207,4 +207,15 @@ function domainName(url){
     return url.replace(regex, "").split(".")[0];
 }
 
-console.log(domainName("http://github.com/carbonfive/raygun"));
+//console.log(domainName("http://github.com/carbonfive/raygun"));
+
+
+function longest(arr, n) {
+    //return arr.sort((a, b) => b.length - a.length)[n - 1];
+
+    return arr.map((str, index) => ({ str, index })).sort((a, b) =>
+      b.str.length - a.str.length || a.index - b.index
+    )[n - 1].str;
+}
+
+console.log(longest(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k','l'],1));
