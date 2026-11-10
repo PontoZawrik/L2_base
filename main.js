@@ -200,3 +200,11 @@ function bingo(ticket, win){
 }
 
 //console.log(bingo([['HGTYRE', 74], ['BE', 66], ['JKTY', 74]], 3));
+
+
+function domainName(url){
+    let regex = /(https?:\/\/)?(www\.)?/;
+    return url.replace(regex, "").split(".")[0];
+}
+
+console.log(domainName("http://github.com/carbonfive/raygun"));
