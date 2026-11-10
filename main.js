@@ -218,4 +218,15 @@ function longest(arr, n) {
     )[n - 1].str;
 }
 
-console.log(longest(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k','l'],1));
+//console.log(longest(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k','l'],1));
+
+
+function hexStringToRGB(hexString) {
+    return {
+        r: parseInt(hexString.slice(1, 3), 16),
+        g: parseInt(hexString.slice(3, 5), 16),
+        b: parseInt(hexString.slice(5), 16),
+    }
+}
+
+console.log(hexStringToRGB("#FF9933"));
