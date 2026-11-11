@@ -292,3 +292,30 @@ Array.prototype.odd = function() {
     });
     return result;
 }
+
+
+function cache(fn) {
+    const storage = {};
+
+    return function (...args) {
+        const key = JSON.stringify(args);
+
+        if (key in storage) {
+            return storage[key];
+        }
+
+        const result = fn.apply(this, args);
+
+        storage[key] = result;
+
+        return result;
+    }
+}
+
+function square(a) {
+    return a ** 2;
+}
+
+const wrapped = cache(square);
+
+console.log(wrapped(6));
